@@ -23,8 +23,9 @@ class Main(context: ActorContext[Nothing])
     extends AbstractBehavior[Nothing](context) {
   val system = context.system
 
-  AkkaManagement(system).start()
-  ClusterBootstrap(system).start()
+//  AkkaManagement(system).start()
+//  ClusterBootstrap(system).start()
+  context.log.info("Started ShoppingCartService")
 
   override def onMessage(msg: Nothing): Behavior[Nothing] =
     this
