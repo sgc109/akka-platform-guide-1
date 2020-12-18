@@ -72,27 +72,27 @@ cp ${SRC} ${tutorial_root}/shopping-order-service-scala/
 
 
 # java only project build files
-declare SRC="${tutorial_root}/00-shopping-cart-service-java/pom.xml"
+declare SRC="${tutorial_root}/shopping-cart-service-java/pom.xml"
+cp ${SRC} ${tutorial_root}/00-shopping-cart-service-java/
 cp ${SRC} ${tutorial_root}/01-shopping-cart-service-java/
 cp ${SRC} ${tutorial_root}/02-shopping-cart-service-java/
 cp ${SRC} ${tutorial_root}/03-shopping-cart-service-java/
 cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/
 cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/
-cp ${SRC} ${tutorial_root}/shopping-cart-service-java/
 
-declare SRC="${tutorial_root}/00-shopping-analytics-service-java/pom.xml"
-cp ${SRC} ${tutorial_root}/shopping-analytics-service-java/
+declare SRC="${tutorial_root}/shopping-analytics-service-java/pom.xml"
+cp ${SRC} ${tutorial_root}/00-shopping-analytics-service-java/
 
-declare SRC="${tutorial_root}/00-shopping-order-service-java/pom.xml"
-cp ${SRC} ${tutorial_root}/shopping-order-service-java/
+declare SRC="${tutorial_root}/shopping-order-service-java/pom.xml"
+cp ${SRC} ${tutorial_root}/00-shopping-order-service-java/
 
-declare SRC="${tutorial_root}/00-shopping-cart-service-java/docker-compose.yml"
+declare SRC="${tutorial_root}/shopping-cart-service-java/docker-compose.yml"
+cp ${SRC} ${tutorial_root}/00-shopping-cart-service-java/
 cp ${SRC} ${tutorial_root}/01-shopping-cart-service-java/
 cp ${SRC} ${tutorial_root}/02-shopping-cart-service-java/
 cp ${SRC} ${tutorial_root}/03-shopping-cart-service-java/
 cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/
 cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/
-cp ${SRC} ${tutorial_root}/shopping-cart-service-java/
 cp ${SRC} ${tutorial_root}/shopping-analytics-service-java/
 cp ${SRC} ${tutorial_root}/shopping-order-service-java/
 
@@ -190,19 +190,38 @@ cp ${SRC} ${tutorial_root}/shopping-analytics-service-java/src/main/resources/
 cp ${SRC} ${tutorial_root}/00-shopping-order-service-java/src/main/resources/
 cp ${SRC} ${tutorial_root}/shopping-order-service-java/src/main/resources/
 
-declare SRC="${tutorial_root}/00-shopping-cart-service-scala/src/main/resources/persistence.conf"
+declare SRC="${tutorial_root}/shopping-cart-service-scala/src/main/resources/persistence.conf"
+cp ${SRC} ${tutorial_root}/00-shopping-cart-service-scala/src/main/resources/
 cp ${SRC} ${tutorial_root}/01-shopping-cart-service-scala/src/main/resources/
 cp ${SRC} ${tutorial_root}/02-shopping-cart-service-scala/src/main/resources/
 cp ${SRC} ${tutorial_root}/03-shopping-cart-service-scala/src/main/resources/
 cp ${SRC} ${tutorial_root}/04-shopping-cart-service-scala/src/main/resources/
 cp ${SRC} ${tutorial_root}/05-shopping-cart-service-scala/src/main/resources/
 
+declare SRC="${tutorial_root}/shopping-cart-service-java/src/main/resources/persistence.conf"
 cp ${SRC} ${tutorial_root}/00-shopping-cart-service-java/src/main/resources/
 cp ${SRC} ${tutorial_root}/01-shopping-cart-service-java/src/main/resources/
 cp ${SRC} ${tutorial_root}/02-shopping-cart-service-java/src/main/resources/
 cp ${SRC} ${tutorial_root}/03-shopping-cart-service-java/src/main/resources/
 cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/main/resources/
 cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/main/resources/
+
+declare SRC="${tutorial_root}/shopping-cart-service-java/src/test/resources/persistence-test.conf"
+cp ${SRC} ${tutorial_root}/02-shopping-cart-service-java/src/test/resources/  
+cp ${SRC} ${tutorial_root}/03-shopping-cart-service-java/src/test/resources/  
+cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/test/resources/  
+cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/test/resources/
+
+declare SRC="${tutorial_root}/shopping-cart-service-java/src/test/resources/integration-test.conf"
+cp ${SRC} ${tutorial_root}/02-shopping-cart-service-java/src/test/resources/  
+cp ${SRC} ${tutorial_root}/03-shopping-cart-service-java/src/test/resources/  
+cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/test/resources/  
+cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/test/resources/
+
+declare SRC="${tutorial_root}/shopping-cart-service-java/src/test/resources/item-popularity-integration-test.conf"
+cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/test/resources/  
+cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/test/resources/
+
 
 declare SRC="${tutorial_root}/00-shopping-cart-service-scala/src/main/resources/grpc.conf"
 cp ${SRC} ${tutorial_root}/01-shopping-cart-service-scala/src/main/resources/
@@ -464,14 +483,38 @@ declare SRC="${tutorial_root}/shopping-cart-service-java/src/main/java/shopping/
 cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/main/java/shopping/cart/
 cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/main/java/shopping/cart/
 
-# FIXME
-#declare SRC="${tutorial_root}/shopping-cart-service-java/src/main/java/shopping/cart/ItemPopularityRepository.java"
-#cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/main/java/shopping/cart/
-#cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/main/java/shopping/cart/
-#
-#declare SRC="${tutorial_root}/shopping-cart-service-java/src/main/java/shopping/cart/ItemPopularityRepositoryImpl.java"
-#cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/main/java/shopping/cart/
-#cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/main/java/shopping/cart/
+declare SRC="${tutorial_root}/shopping-cart-service-java/src/main/java/shopping/cart/repository/HibernateJdbcSession.java"
+cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/03-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/02-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/01-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/00-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+
+declare SRC="${tutorial_root}/shopping-cart-service-java/src/main/java/shopping/cart/repository/SpringIntegration.java"
+cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/03-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/02-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/01-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/00-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+
+declare SRC="${tutorial_root}/shopping-cart-service-java/src/main/java/shopping/cart/repository/SpringConfig.java"
+cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/03-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/02-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/01-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/00-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+
+declare SRC="${tutorial_root}/shopping-cart-service-java/src/main/java/shopping/cart/repository/ItemPopularityRepository.java"
+cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+
+declare SRC="${tutorial_root}/shopping-cart-service-java/src/main/java/shopping/cart/repository/AsyncItemPopularityRepository.java"
+cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/main/java/shopping/cart/repository/
+
 
 declare SRC="${tutorial_root}/shopping-cart-service-java/src/main/java/shopping/cart/PublishEventsProjection.java"
 cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/main/java/shopping/cart/
@@ -497,6 +540,8 @@ cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/main/java/shopping/
 declare SRC="${tutorial_root}/shopping-cart-service-java/src/test/java/shopping/cart/CreateTableTestUtils.java"
 cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/test/java/shopping/cart/
 cp ${SRC} ${tutorial_root}/04-shopping-cart-service-java/src/test/java/shopping/cart/
+cp ${SRC} ${tutorial_root}/03-shopping-cart-service-java/src/test/java/shopping/cart/
+cp ${SRC} ${tutorial_root}/02-shopping-cart-service-java/src/test/java/shopping/cart/
 
 declare SRC="${tutorial_root}/shopping-cart-service-java/src/test/java/shopping/cart/ItemPopularityIntegrationTest.java"
 cp ${SRC} ${tutorial_root}/05-shopping-cart-service-java/src/test/java/shopping/cart/
