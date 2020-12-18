@@ -329,7 +329,7 @@ include::example$03-shopping-cart-service-scala/src/main/scala/shopping/cart/Sho
 
 == Run locally
 
-Start Cassandra, unless it's already running:
+Start the Postgres database, unless it's already running:
 
 [source,shell script]
 ----
@@ -376,7 +376,7 @@ grpcurl -d '{"cartId":"cart2"}' -plaintext 127.0.0.1:8101 shoppingcart.ShoppingC
 
 === Stop the service
 
-When finished, stop the service with `ctrl-c`. Leave Cassandra running for the next set of steps, or stop it with:
+When finished, stop the service with `ctrl-c`. Leave Postgres running for the next set of steps, or stop it with:
 
 [source,shell script]
 ----

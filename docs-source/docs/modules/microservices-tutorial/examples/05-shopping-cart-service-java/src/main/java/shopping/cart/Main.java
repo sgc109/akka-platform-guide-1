@@ -41,9 +41,11 @@ public class Main extends AbstractBehavior<Void> {
         SpringIntegration.applicationContext(system.settings().config());
     JpaTransactionManager transactionManager = springContext.getBean(JpaTransactionManager.class);
 
+    // tag::repo-instance[]
     ItemPopularityRepository itemPopularityRepository =
         springContext.getBean(ItemPopularityRepository.class);
-
+    // end::repo-instance[]
+    
     ItemPopularityProjection.init(system, transactionManager, itemPopularityRepository);
 
     String grpcInterface =

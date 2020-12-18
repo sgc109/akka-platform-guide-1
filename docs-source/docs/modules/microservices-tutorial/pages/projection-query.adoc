@@ -15,7 +15,7 @@ This piece of the xref:overview.adoc[full example] focuses on the `ItemPopularit
 
 * implement a Projection
 * distribute the Projection instances over the nodes in the Akka Cluster
-* work with an asynchronous API for Cassandra
+* work with the Projection JDBC API
 
 The xref:concepts:cqrs.adoc[CQRS] section explains why it is a good practice to build a Projection from entity events that can be queried. The {akka-blog}/news/2020/09/10/akka-projection-intro-video[Introduction to Akka Projections video {tab-icon}, window="tab"] is also a good starting point for learning about Akka Projections.
 
@@ -45,7 +45,7 @@ To process events in a projection, we will:
 
 * implement the event processing of the Projection in a `Handler`
 * encapsulate database access with `ItemPopularityRepository`, which can have a stubbed implementation for tests
-* add an implementation for Cassandra
+* add an implementation for JDBC [.group-java]#using Spring Data and Hibernate#
 
 ifdef::todo[TODO: add the source file name consistently in the pages that precede this one just as they are in the following tabset.]
 
@@ -86,7 +86,7 @@ Java::
 .src/main/java/shopping/cart/ItemPopularityRepository.java:
 [source,java,indent=0]
 ----
-include::example$04-shopping-cart-service-java/src/main/java/shopping/cart/ItemPopularityRepository.java[]
+include::example$04-shopping-cart-service-java/src/main/java/shopping/cart/repository/ItemPopularityRepository.java[]
 ----
 
 Scala::
@@ -97,16 +97,17 @@ Scala::
 include::example$04-shopping-cart-service-scala/src/main/scala/shopping/cart/ItemPopularityRepository.scala[tag=trait]
 ----
 
-.  Add the implementation for Cassandra:
+.  [.group-java]#Use Spring ApplicationContext to retrieve the implementation for the repository# [.group-scala]#Add the implementation for Postgres:#
 +
 [.tabset]
 Java::
 +
-.src/main/java/shopping/cart/ItemPopularityRepositoryImpl.java:
+.src/main/java/shopping/cart/Main.java:
 [source,java,indent=0]
 ----
-include::example$04-shopping-cart-service-java/src/main/java/shopping/cart/ItemPopularityRepositoryImpl.java[]
+include::example$05-shopping-cart-service-java/src/main/java/shopping/cart/Main.java[tag=repo-instance]
 ----
+// using 05, instead of 04, because 04 has a callout that we don't want to show here
 
 Scala::
 +
@@ -115,10 +116,6 @@ Scala::
 ----
 include::example$04-shopping-cart-service-scala/src/main/scala/shopping/cart/ItemPopularityRepository.scala[tag=impl]
 ----
-
-The `CassandraSession` comes from the Cassandra connector in Alpakka and provides an asynchronous API for executing __CQL__ statements to Cassandra. In the initialization code, introduced later, we will see how to get access to a `CassandraSession`. You can learn more about the `CassandraSession` in the {alpakka}/cassandra.html[Alpakka reference documentation {tab-icon}, window="tab"].
-
-NOTE: The example will persist the item popularity count with a https://docs.datastax.com/en/cql-oss/3.x/cql/cql_reference/counter_type.html[Cassandra counter {tab-icon}, window="tab"] data type. It's not possible to guarantee that item count updates occur idempotently because we are using at-least-once semantics. However, since the count is only a rough metric to judge how popular an item is it's not critical to have a totally accurate figure.
 
 == Initialize the Projection
 
