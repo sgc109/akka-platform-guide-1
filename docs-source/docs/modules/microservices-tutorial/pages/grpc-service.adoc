@@ -72,7 +72,7 @@ TIP: You might have to synchronize the [.group-scala]#`build.sbt`# [.group-java]
 
 == Implement the service
 
-Let's implement the `ShoppingCartService` [.group-scala]#trait# [.group-java]#interface#. Create a `ShoppingCartServiceImpl` class that extends the generated `ShoppingCartService` [.group-scala]#trait# [.group-java]#interface#. Implement the `addItem` method from the [.group-scala]#trait# [.group-java]#interface# by logging the call and return a successful [.group-scala]#`Future`# [.group-java]#`CompletionStage`#.
+Let's implement the `ShoppingCartService` [.group-scala]#trait# [.group-java]#interface#. Create a `ShoppingCartServiceImpl` class that extends the generated `ShoppingCartService` [.group-scala]#trait# [.group-java]#interface#. Implement the `addItem` method from the [.group-scala]#trait# [.group-java]#interface# by logging the call and returning a successful [.group-scala]#`Future`# [.group-java]#`CompletionStage`#.
 
 [.tabset]
 Java::
